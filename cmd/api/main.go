@@ -13,8 +13,8 @@ func main() {
 	}
 
 	http.HandleFunc("/", func(w http.ResponseWriter, r * http.Request){
-		fmt.Fprintln(w, "Voice Cloning API(Go) is Runnig")
-		fmt.Fprintln(w, "Hostname: %s", os.Getenv("HOSTNANE"))
+		fmt.Fprintln(w, "Voice Cloning API(Go) is Runnig!")
+		fmt.Fprintf(w, "Hostname: %s", os.Getenv("HOSTNAME"))
 	})
 
 	log.Printf("Server starting on port %s...", port)
