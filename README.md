@@ -5,14 +5,13 @@
 ## Run cluster
 
 ```
-terraform apply
+make cluster-up
 ```
 
 ## Check out
 
 ```
-export KUBECONFIG=$(pwd)/voice-cloning-cluster-config
-kubectl get nodes
+make nodes
 ```
 
 If status is Ready, it was success.
