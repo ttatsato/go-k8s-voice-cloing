@@ -11,6 +11,7 @@ terraform apply
 ## Check out
 
 ```
+export KUBECONFIG=$(pwd)/voice-cloning-cluster-config
 kubectl get nodes
 ```
 
