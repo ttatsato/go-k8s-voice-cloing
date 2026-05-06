@@ -1,45 +1,64 @@
-# go-k8s-voice-cloing
+# go-k8s-voice-cloning
 
-# Get started
+## Stack
 
-## Run k8s cluster
+- Go
+- Docker
+- Kubernetes
+- kind
+- Terraform
 
-```
+## Prerequisites
+
+Make sure the following tools are installed:
+
+- `docker`
+- `kubectl`
+- `kind`
+- `terraform`
+- `make`
+
+## Get Started
+
+### 1) Create a local Kubernetes cluster
+
+```bash
 make cluster-up
 ```
 
-## deploy application on k8s
+### 2) Deploy the application to Kubernetes
 
-```
+```bash
 make deploy
 ```
 
-If status is Ready, it was success.
+After deployment, check that nodes and pods are healthy:
 
+```bash
+make nodes
+kubectl get pods
 ```
---- 🚀 Deployment deployed! ---
-Run 'make status' to check.
-```
 
-## redeploy application
+### 3) Redeploy after code changes
 
-if you change to files, you execute the following command.
+If you update application code, run:
 
-```
+```bash
 make restart
 ```
 
-## checkout running application on browser
+### 4) Access the application from your browser
 
-```
+```bash
 kubectl port-forward svc/voice-api-service 8080:80
 ```
 
-access the follow link
-http://localhost:8080
+Open:
 
-## Cleanup
+[http://localhost:8080](http://localhost:8080)
 
-```
+### 5) Cleanup
+
+```bash
 make cluster-down
 ```
